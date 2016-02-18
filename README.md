@@ -1,8 +1,12 @@
 OsgAquarium
 ===========
 
-A playful experiment with face tracking using OpenCV and visualization
-using OpenSceneGraph
+A playful experiment with face tracking using OpenCV and visualization using OpenSceneGraph
+
+**See video here**:
+
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/CrOmVG9RwgM/0.jpg)](http://www.youtube.com/watch?v=CrOmVG9RwgM "OsgAquarium")
+
 
 License
 -------
@@ -17,7 +21,7 @@ BY 4.0): http://creativecommons.org/licenses/by/4.0/
 
 * `fish1.png` - **Original:** *Tiia Monto* - Creative Commons Attribution-Share Alike 3.0 Unported (CC BY-SA 3.0): http://creativecommons.org/licenses/by-sa/3.0/ - **Modifications:** 2016-02-16 - Scaled and added outline
 
-* `fish2.png` - **Original:** *André Karwath* - Creative Commons Attribution-Share Alike 2.5 Generic: http://creativecommons.org/licenses/by-sa/2.5/  - **Modifications:** 2016-02-16 - Scaled and added outline
+* `fish2.png` - **Original:** *André Karwath* - Creative Commons Attribution-Share Alike 2.5 Generic (CC BY-SA 2.5): http://creativecommons.org/licenses/by-sa/2.5/  - **Modifications:** 2016-02-16 - Scaled and added outline
 
 * `fish3.png` - **Original:** *Luc Viatour* - Creative Commons Attribution-Share Alike 3.0 Unported (CC BY-SA 3.0): http://creativecommons.org/licenses/by-sa/3.0/  - **Modifications:** 2016-02-16 - Scaled and added outline
 
