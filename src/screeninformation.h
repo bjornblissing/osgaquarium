@@ -13,6 +13,7 @@ public:
 	osg::Vec2i size() const;
 	double aspect_ratio() const;
 private:
+	osg::Vec2i get_screen_size() const;
 	mutable bool _init = { false };
 	mutable osg::Vec2i _size = { osg::Vec2i(0, 0) };
 };

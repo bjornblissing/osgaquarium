@@ -6,7 +6,7 @@
 */
 #include "screeninformation.h"
 
-osg::Vec2i get_screen_size()
+osg::Vec2i ScreenInformation::get_screen_size() const
 {
 	// Try to get the window system interface
 	osg::GraphicsContext::WindowingSystemInterface* wsi = osg::GraphicsContext::getWindowingSystemInterface();
