@@ -12,12 +12,9 @@
 
 class Aquarium : public osg::Referenced{
 public:
-	Aquarium(const Aquarium &obj) = delete;
 	explicit Aquarium(double aspect) : _aspect(aspect){};
 	osg::Group* group();
 	double depth() const { return size_from_aspect(_aspect).z(); }
-protected:
-	~Aquarium() {};
 private:
 	osg::Node* node();
 	osg::Vec3 size_from_aspect(double aspect) const;

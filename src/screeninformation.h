@@ -10,11 +10,8 @@
 
 class ScreenInformation : public osg::Referenced {
 public:
-	ScreenInformation() {};
 	osg::Vec2i size() const;
 	double aspect_ratio() const;
-protected:
-	~ScreenInformation() {};
 private:
 	mutable bool _init = { false };
 	mutable osg::Vec2i _size = { osg::Vec2i(0, 0) };

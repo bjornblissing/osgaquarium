@@ -12,8 +12,6 @@ class Fish : public osg::Referenced {
 public:
 	explicit Fish(std::string filename, osg::Vec2 size) : _filename(filename), _size(size) {};
 	osg::Node* node();
-protected:
-	~Fish() {};
 private:
 	std::string _filename = { "" };
 	osg::Vec2 _size = { osg::Vec2(0.0, 0.0) };
