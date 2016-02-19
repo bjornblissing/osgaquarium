@@ -28,30 +28,30 @@ osg::Node* Aquarium::node() {
 		// Vertex
 		osg::ref_ptr<osg::Vec3Array> vertex_array = new osg::Vec3Array;
 		// Back plane
-		vertex_array->push_back(osg::Vec3(-1.0f, -1.0f, -1.0f));
-		vertex_array->push_back(osg::Vec3(1.0f, -1.0f, -1.0f));
-		vertex_array->push_back(osg::Vec3(1.0f, 1.0f, -1.0f));
-		vertex_array->push_back(osg::Vec3(-1.0f, 1.0f, -1.0f));
+		vertex_array->push_back(osg::Vec3(-1.0f, -1.0f, -2.0f));
+		vertex_array->push_back(osg::Vec3(1.0f, -1.0f, -2.0f));
+		vertex_array->push_back(osg::Vec3(1.0f, 1.0f, -2.0f));
+		vertex_array->push_back(osg::Vec3(-1.0f, 1.0f, -2.0f));
 		// Bottom plane
 		vertex_array->push_back(osg::Vec3(-1.0f, -1.0f, 0.0f));
 		vertex_array->push_back(osg::Vec3(1.0f, -1.0f, 0.0f));
-		vertex_array->push_back(osg::Vec3(1.0f, -1.0f, -1.0f));
-		vertex_array->push_back(osg::Vec3(-1.0f, -1.0f, -1.0f));
+		vertex_array->push_back(osg::Vec3(1.0f, -1.0f, -2.0f));
+		vertex_array->push_back(osg::Vec3(-1.0f, -1.0f, -2.0f));
 		// Top plane
 		vertex_array->push_back(osg::Vec3(1.0f, 1.0f, 0.0f));
 		vertex_array->push_back(osg::Vec3(-1.0f, 1.0f, 0.0f));
-		vertex_array->push_back(osg::Vec3(-1.0f, 1.0f, -1.0f));
-		vertex_array->push_back(osg::Vec3(1.0f, 1.0f, -1.0f));
+		vertex_array->push_back(osg::Vec3(-1.0f, 1.0f, -2.0f));
+		vertex_array->push_back(osg::Vec3(1.0f, 1.0f, -2.0f));
 		// Left plane
 		vertex_array->push_back(osg::Vec3(-1.0f, -1.0f, 0.0f));
-		vertex_array->push_back(osg::Vec3(-1.0f, -1.0f, -1.0f));
-		vertex_array->push_back(osg::Vec3(-1.0f, 1.0f, -1.0f));
+		vertex_array->push_back(osg::Vec3(-1.0f, -1.0f, -2.0f));
+		vertex_array->push_back(osg::Vec3(-1.0f, 1.0f, -2.0f));
 		vertex_array->push_back(osg::Vec3(-1.0f, 1.0f, 0.0f));
 		// Right plane
 		vertex_array->push_back(osg::Vec3(1.0f, -1.0f, 0.0f));
 		vertex_array->push_back(osg::Vec3(1.0f, 1.0f, 0.0f));
-		vertex_array->push_back(osg::Vec3(1.0f, 1.0f, -1.0f));
-		vertex_array->push_back(osg::Vec3(1.0f, -1.0f, -1.0f));
+		vertex_array->push_back(osg::Vec3(1.0f, 1.0f, -2.0f));
+		vertex_array->push_back(osg::Vec3(1.0f, -1.0f, -2.0f));
 
 		quad_geometry->setVertexArray(vertex_array);
 
@@ -168,7 +168,7 @@ osg::Group* Aquarium::group() {
 }
 
 osg::PositionAttitudeTransform* Aquarium::add_fish_at_position(osg::ref_ptr<Fish> fish, const osg::Vec3f& position) {
-	osg::Vec3f local_pos = componentMultiply(position, osg::Vec3(1.0, 1.0, -1.0));
+	osg::Vec3f local_pos = componentMultiply(position, osg::Vec3(1.0, 1.0, -2.0));
 	osg::ref_ptr<osg::PositionAttitudeTransform> pat = new osg::PositionAttitudeTransform;
 	pat->setPosition(local_pos);
 	pat->setScale(osg::Vec3(1.0, _aspect, 1.0));
