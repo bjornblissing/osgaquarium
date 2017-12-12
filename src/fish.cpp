@@ -25,22 +25,22 @@ osg::Node* Fish::node() {
 		vertex_array->push_back(osg::Vec3(_size.x()/2.0, -_size.y()/2.0, 0.0));
 		vertex_array->push_back(osg::Vec3(_size.x()/2.0, _size.y()/2.0, 0.0));
 		vertex_array->push_back(osg::Vec3(-_size.x()/2.0, _size.y()/2.0, 0.0));
-		quad_geometry->setVertexArray(vertex_array);
+		quad_geometry->setVertexArray(vertex_array.get());
 
 		osg::ref_ptr<osg::Vec3Array> normal_array = new osg::Vec3Array;
 		normal_array->push_back(osg::Vec3(0.0, 0.0, 1.0));
-		quad_geometry->setNormalArray(normal_array, osg::Array::BIND_OVERALL);
+		quad_geometry->setNormalArray(normal_array.get(), osg::Array::BIND_OVERALL);
 
 		osg::ref_ptr<osg::Vec2Array> texture_array = new osg::Vec2Array;
 		texture_array->push_back(osg::Vec2(0, 0));
 		texture_array->push_back(osg::Vec2(1, 0));
 		texture_array->push_back(osg::Vec2(1, 1));
 		texture_array->push_back(osg::Vec2(0, 1));
-		quad_geometry->setTexCoordArray(0, texture_array);
+		quad_geometry->setTexCoordArray(0, texture_array.get());
 
 		osg::ref_ptr<osg::Vec4Array> color_array = new osg::Vec4Array;
 		color_array->push_back(osg::Vec4(1.0f, 1.0f, 1.0f, 1.0f));
-		quad_geometry->setColorArray(color_array, osg::Array::BIND_OVERALL);
+		quad_geometry->setColorArray(color_array.get(), osg::Array::BIND_OVERALL);
 		
 		quad_geometry->addPrimitiveSet(new osg::DrawArrays(osg::PrimitiveSet::QUADS, 0, vertex_array->size()));
 		quad_geode->addDrawable(quad_geometry);

@@ -53,7 +53,7 @@ osg::Node* Aquarium::node() {
 		vertex_array->push_back(osg::Vec3(1.0f, 1.0f, -2.0f));
 		vertex_array->push_back(osg::Vec3(1.0f, -1.0f, -2.0f));
 
-		quad_geometry->setVertexArray(vertex_array);
+		quad_geometry->setVertexArray(vertex_array.get());
 
 		// Normals
 		osg::ref_ptr<osg::Vec3Array> normal_array = new osg::Vec3Array;
@@ -82,7 +82,7 @@ osg::Node* Aquarium::node() {
 		normal_array->push_back(osg::Vec3(-1.0, 0.0, 0.0));
 		normal_array->push_back(osg::Vec3(-1.0, 0.0, 0.0));
 		normal_array->push_back(osg::Vec3(-1.0, 0.0, 0.0));
-		quad_geometry->setNormalArray(normal_array, osg::Array::BIND_PER_VERTEX);
+		quad_geometry->setNormalArray(normal_array.get(), osg::Array::BIND_PER_VERTEX);
 
 		// Texture coordinates
 		osg::ref_ptr<osg::Vec2Array> texture_array = new osg::Vec2Array;
@@ -112,11 +112,11 @@ osg::Node* Aquarium::node() {
 		texture_array->push_back(osg::Vec2(size.y(), size.z()));
 		texture_array->push_back(osg::Vec2(0.0, size.z()));
 
-		quad_geometry->setTexCoordArray(0, texture_array);
+		quad_geometry->setTexCoordArray(0, texture_array.get());
 
 		osg::ref_ptr<osg::Vec4Array> color_array = new osg::Vec4Array;
 		color_array->push_back(osg::Vec4(1.0f, 1.0f, 1.0f, 1.0f));
-		quad_geometry->setColorArray(color_array, osg::Array::BIND_OVERALL);
+		quad_geometry->setColorArray(color_array.get(), osg::Array::BIND_OVERALL);
 
 		quad_geometry->addPrimitiveSet(new osg::DrawArrays(osg::PrimitiveSet::QUADS, 0, vertex_array->size()));
 		quad_geode->addDrawable(quad_geometry);
@@ -143,7 +143,7 @@ osg::Node* Aquarium::node() {
 
 		_node = quad_geode->asNode();
 	}
-	return _node;
+	return _node.get();
 }
 
 osg::Group* Aquarium::group() {
@@ -164,7 +164,7 @@ osg::Group* Aquarium::group() {
 		_group->addChild(add_fish_at_position(fish3, osg::Vec3(0.5, -0.5, 0.5)));
 		_group->addChild(add_fish_at_position(fish3, osg::Vec3(-0.5, 0.5, 0.25)));
 	}
-	return _group;
+	return _group.get();
 }
 
 osg::PositionAttitudeTransform* Aquarium::add_fish_at_position(osg::ref_ptr<Fish> fish, const osg::Vec3f& position) {
